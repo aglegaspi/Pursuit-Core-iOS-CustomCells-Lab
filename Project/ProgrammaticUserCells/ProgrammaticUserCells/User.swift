@@ -44,10 +44,13 @@ struct Location: Codable {
     //https://stackoverflow.com/questions/47935705/using-codable-with-key-that-is-sometimes-an-int-and-other-times-a-string
     
     init(from decoder: Decoder) throws {
+        
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         street = try container.decode(Street.self, forKey: .street)
         city = try container.decode(String.self, forKey: .city)
         state = try container.decode(String.self, forKey: .state)
+        
         if let postCodeInt = try? container.decode(Int.self, forKey: .postcode) {
             postcode = String(postCodeInt)
         } else {

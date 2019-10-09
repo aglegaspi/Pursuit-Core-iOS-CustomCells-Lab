@@ -1,0 +1,8 @@
+
+
+Use the 'Random User API' to load a list of people into a Collection View.
+The project file includes the model and necessary networking classes for hitting the API.
+
+- Clicking on a user should segue to a Detail View Controller that displays more information about the user.
+
+Focus on designing and building the UI programmatically. You may either use a xib file or define your cells fully programmatically.

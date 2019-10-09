@@ -13,11 +13,15 @@ class ProgrammaticUserCellsTests: XCTestCase {
         // Assert
         XCTAssertEqual(users.count, 50)
     }
+    
     func getJSONDataFromBundle(withFileName filename: String) -> Data {
+        
         guard let pathToData = Bundle.main.path(forResource: filename, ofType: "json") else {
             fatalError("\(filename).json file not found")
         }
+        
         let internalUrl = URL(fileURLWithPath: pathToData)
+        
         do {
             let data = try Data(contentsOf: internalUrl)
             return data
