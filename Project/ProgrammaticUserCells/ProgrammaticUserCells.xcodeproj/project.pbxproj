@@ -21,6 +21,7 @@
 		CDA0F5F92348FEB800B2E7F0 /* UsersFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */; };
 		ECF813B6234D3408000662EC /* To-Do-List in Resources */ = {isa = PBXBuildFile; fileRef = ECF813B5234D3408000662EC /* To-Do-List */; };
 		ECF813E6234E3DC4000662EC /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF813E5234E3DC4000662EC /* UserCollectionViewCell.swift */; };
+		ECF813EC234E86BB000662EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF813EB234E86BB000662EC /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFetchingService.swift; sourceTree = "<group>"; };
 		ECF813B5234D3408000662EC /* To-Do-List */ = {isa = PBXFileReference; lastKnownFileType = text; path = "To-Do-List"; sourceTree = "<group>"; };
 		ECF813E5234E3DC4000662EC /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECF813EB234E86BB000662EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +97,11 @@
 			children = (
 				ECF813B5234D3408000662EC /* To-Do-List */,
 				CDA0F5FA2349003E00B2E7F0 /* Networking */,
-				CDA0F5CD2348F74900B2E7F0 /* AppDelegate.swift */,
-				CDA0F5CF2348F74900B2E7F0 /* SceneDelegate.swift */,
-				CDA0F5D12348F74900B2E7F0 /* ViewController.swift */,
-				ECF813E5234E3DC4000662EC /* UserCollectionViewCell.swift */,
-				CDA0F5EF2348F7E300B2E7F0 /* User.swift */,
+				ECF813EA234E866B000662EC /* Supporting Files */,
+				ECF813E7234E8644000662EC /* Controllers */,
+				ECF813E8234E8655000662EC /* Views */,
+				ECF813E9234E865C000662EC /* Models */,
 				CDA0F5D62348F74F00B2E7F0 /* Assets.xcassets */,
-				CDA0F5D82348F74F00B2E7F0 /* LaunchScreen.storyboard */,
 				CDA0F5DB2348F74F00B2E7F0 /* Info.plist */,
 			);
 			path = ProgrammaticUserCells;
@@ -124,6 +124,41 @@
 				CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		ECF813E7234E8644000662EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0F5D12348F74900B2E7F0 /* ViewController.swift */,
+				ECF813EB234E86BB000662EC /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ECF813E8234E8655000662EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECF813E5234E3DC4000662EC /* UserCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECF813E9234E865C000662EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0F5EF2348F7E300B2E7F0 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ECF813EA234E866B000662EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0F5CD2348F74900B2E7F0 /* AppDelegate.swift */,
+				CDA0F5CF2348F74900B2E7F0 /* SceneDelegate.swift */,
+				CDA0F5D82348F74F00B2E7F0 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF813EC234E86BB000662EC /* DetailViewController.swift in Sources */,
 				CDA0F5F02348F7E300B2E7F0 /* User.swift in Sources */,
 				CDA0F5D22348F74900B2E7F0 /* ViewController.swift in Sources */,
 				CDA0F5F52348FE8800B2E7F0 /* AppError.swift in Sources */,

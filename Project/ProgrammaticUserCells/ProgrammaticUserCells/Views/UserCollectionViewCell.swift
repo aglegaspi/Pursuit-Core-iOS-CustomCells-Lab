@@ -17,8 +17,7 @@ class UserCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    /// LIFE CYCLES
-    
+    /// LIFE CYCLES & INITIALIZERS
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
@@ -28,9 +27,11 @@ class UserCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// FUNCTIONS
     func addViews(){
         backgroundColor = UIColor.white
         addSubview(nameLabel)
+        
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             nameLabel.widthAnchor.constraint(equalToConstant: 200),

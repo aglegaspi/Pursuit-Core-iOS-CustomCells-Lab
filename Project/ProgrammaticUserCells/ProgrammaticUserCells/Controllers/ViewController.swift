@@ -8,6 +8,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: - VIEWS
     lazy var userCV: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
         return cv
     }()
     
+    //MARK: - LIFECYCLES
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUsers()
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
         setCollectionViewConstraints()
     }
     
+    //MARK: - PRIVATE FUNCTIONS
     private func loadUsers() {
         UsersFetchingService.manager.getUsers { (result) in
             DispatchQueue.main.async {
@@ -46,6 +49,8 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    //MARK: - CONSTRAINTS
     private func setCollectionViewConstraints() {
         self.userCV.translatesAutoresizingMaskIntoConstraints = false
         
@@ -56,14 +61,15 @@ class ViewController: UIViewController {
             self.userCV.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
-}
+    }
 
+// MARK: - EXTENSTIONS
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 100)
+        return CGSize(width: collectionView.bounds.width, height: 50)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -76,14 +82,20 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //        if let cell = userCV.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as? UserCollectionViewCell {
         guard let cell = userCV.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as? UserCollectionViewCell else { return UICollectionViewCell() }
+        
         let user = users[indexPath.row]
         cell.nameLabel.text = "\(user.name.first) \(user.name.last)"
         return cell
-        
-        
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let userSelected = users[indexPath.row]
+        let detailVC = DetailViewController()
+        detailVC.modalPresentationStyle = .currentContext
+        detailVC.user = userSelected
+        present(detailVC, animated: true, completion: .none)
+    }
     
 }
